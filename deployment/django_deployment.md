@@ -37,6 +37,7 @@ This installs Django and gunicorn in our virtual environment.
 ### Step 4 - Configuring Django
 
 Add your IP address or domain to the `ALLOWED_HOSTS` variable in `settings.py`.
+
 Make sure to change `DEBUG=False`.
 
 ![settings changes](../images/settings.webp)
