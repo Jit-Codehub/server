@@ -37,6 +37,9 @@ This installs Django and gunicorn in our virtual environment.
 ### Step 4 - Configuring Django
 
 Add your IP address or domain to the `ALLOWED_HOSTS` variable in `settings.py`.
+Make sure to change `DEBUG=False`.
+
+![settings changes](../images/settings.webp)
 
 If you have any migrations to run:
 
@@ -52,6 +55,8 @@ sudo ufw allow 8000
 python manage.py runserver 0.0.0.0:8000
 ```
 
+![8000 port testing](../images/8000 port testing.webp)
+
 You can now access your app at `http://<your-ip>:8000`.
 
 ---
@@ -61,8 +66,11 @@ You can now access your app at `http://<your-ip>:8000`.
 ```bash
 gunicorn --bind 0.0.0.0:8000 folder_name_in_which_wsgi_file_is_located.wsgi
 ```
+![gunicorn_testing_success_status](../images/gunicorn_testing_success_status.webp)
 
 This should start Gunicorn on port 8000. Visit `http://<ip-address>:8000` to check your app.
+
+![success_homepage](../images/success_homepage.webp)
 
 Deactivate the virtual environment (optional):
 
