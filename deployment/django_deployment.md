@@ -55,7 +55,7 @@ sudo ufw allow 8000
 python manage.py runserver 0.0.0.0:8000
 ```
 
-![8000 port testing](../images/8000 port testing.webp)
+![8000 port testing](../images/8000_port_testing.webp)
 
 You can now access your app at `http://<your-ip>:8000`.
 
