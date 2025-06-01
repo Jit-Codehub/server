@@ -58,7 +58,7 @@ You can now access your app at `http://<your-ip>:8000`.
 ### Step 5 - Configuring Gunicorn
 
 ```bash
-gunicorn --bind 0.0.0.0:8000 folder_name_where_wsgi_file_is_located.wsgi
+gunicorn --bind 0.0.0.0:8000 folder_name_in_which_wsgi_file_is_located.wsgi
 ```
 
 This should start Gunicorn on port 8000. Visit `http://<ip-address>:8000` to check your app.
