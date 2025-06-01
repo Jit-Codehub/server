@@ -1,5 +1,5 @@
 # How to Host Django Application using Gunicorn & Nginx in Production
-![Alt Text](images/ngnix.webp)
+![Alt Text](server/images/ngnix.webp)
 
 ---
 
