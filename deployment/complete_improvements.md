@@ -228,8 +228,12 @@ Ensure static/media folders are owned by the deploy user and readable by Nginx:
 
 ```bash
 sudo chown -R deployuser:www-data /home/equity_master_project/staticfiles/
+sudo chown -R deployuser:www-data /home/equity_master_project/media/
+
+sudo chmod -R 755 /home/equity_master_project/staticfiles
+sudo chmod -R 755 /home/equity_master_project/media
+
 sudo chown -R deployuser:www-data /run/gunicorn.sock
-sudo chmod -R 755 /home/equity_master_project/staticfiles/
 ```
 
 ### 🚫 Don't Run as root
