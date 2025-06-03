@@ -1,9 +1,13 @@
 # 🚀 Celery: Distributed Task Queue System
+![celery_works](../images/celery_works.png)
+
+
 
 ## 📌 Overview
 
 **Celery** is a task queue system that allows you to execute work outside the Python web application’s HTTP request-response cycle.
-
+###  Celery Architecture
+![celery_architecture](../images/celery_architecture.png)
 ---
 
 ## 🌟 Key Features
@@ -94,6 +98,7 @@ pip install gevent
 celery -A your_project.celery worker --pool=gevent --concurrency=100 -l INFO
 ```
 
+![determine_number_of_processes](../images/determine_number_of_processes.png)
 ---
 
 ## ⏲ Celery Beat and Django-Celery-Results
