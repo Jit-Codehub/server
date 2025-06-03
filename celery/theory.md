@@ -7,7 +7,7 @@
 
 **Celery** is a task queue system that allows you to execute work outside the Python web application’s HTTP request-response cycle.
 ###  Celery Architecture
-![celery_architecture](../images/celery_architecture.png)
+![celery_architecture](../images/celery_architecture.webp)
 ---
 
 ## 🌟 Key Features
