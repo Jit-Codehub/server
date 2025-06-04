@@ -56,8 +56,8 @@ my_task.apply_async(
 
 - `args`: Positional arguments
 - `kwargs`: Keyword arguments
-- `countdown`: Delay in seconds
-- `expires`: Expiry time in seconds
+- `countdown`: Number of seconds to delay the task execution from the current time
+- `expires`: The maximum time in (seconds) until the task is considered expired and will not be executed if it hasn't started yet.
 
 ---
 
@@ -132,20 +132,20 @@ def my_view(request):
 
 ## 🔍 `AsyncResult` Attributes
 
-- `result`: Final return value (if completed)
-- `state`: Current state (e.g., `PENDING`, `SUCCESS`, etc.)
+- `result`: The result of the task, if it has completed successfully. You can access the task result using response.result
+- `state`: The current state of the task. Possible values include "PENDING", "STARTED", "SUCCESS", "FAILURE", "RETRY", etc.
 - `status`: Alias for state
 - `task_id` / `id`: Unique identifier for task
-- `expires`: Expiration timestamp (UTC)
+- `expires`: The timestamp (in UTC) after which the task is considered expired if it hasn’t started yet.
 
 ---
 
 ## 🧪 `AsyncResult` Methods
 
-- `ready()`: ✅ True if task is done
-- `successful()`: ✅ True if completed without error
-- `failed()`: ❌ True if task raised an exception
-- `get(timeout=n)`: Blocks and returns result or raises exception
+- `ready()`: ✅ Returns True if the task is complete
+- `successful()`: ✅ Returns True if the task completed without errors.
+- `failed()`: ❌ Returns True if the task raised an exception(failed).
+- `get(timeout=n)`: Retrieves the result of the task. If the task is still running or hasn’t started yet, it will block until the result becomes available. You can optionally pass a timeout argument to specify the maximum wait time.
 
 ---
 
