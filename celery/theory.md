@@ -59,7 +59,8 @@ Start a worker:
 ```bash
 celery -A your_project.celery worker -l INFO
 ```
-
+## 🌟 Important  Note
+*    **By default celery uses, pool => prefork and concurrency => no. of cores available in system.**
 ---
 
 ## 🏗 Execution Pools
@@ -97,6 +98,25 @@ celery -A your_project.celery worker --pool=threads --concurrency=10 -l INFO
 pip install gevent
 celery -A your_project.celery worker --pool=gevent --concurrency=100 -l INFO
 ```
+
+## 🚀 Default Behavior
+
+By default, Celery uses:
+
+- 🌀 **Pool: prefork**
+  - Each worker process is a separate child process.
+  - This is the standard choice on Unix-like systems (utilizes multiple CPU cores).
+
+- ⚙️ **Concurrency: Number of CPU cores**
+  - Celery automatically spawns one worker process per CPU core.
+  - E.g., on a 4-core machine, `--concurrency` defaults to 4.
+
+## 📈 Autoscale Workers
+
+```bash
+celery -A <project>.celery worker -l info --autoscale=10,3
+```
+* **🔄 Dynamically scale between a maximum of 10 and a minimum of 3 concurrent child processes based on load.**
 
 ![determine_number_of_processes](../images/determine_number_of_processes.png)
 ---
