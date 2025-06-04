@@ -82,7 +82,7 @@ from .tasks import add
 from django.shortcuts import render
 
 def my_view(request):
-    response = add.apply_async(args=[10, 20], kwargs={"author": "Geeky"})
+    response = add.apply_async(args=[10, 20], kwargs={"author": "Geeky"}) #Enqueue the task for asynchronous execution
     return render(request, "home.html", {"result": response.id})
 ```
 
@@ -115,7 +115,7 @@ def add(x, y, author=None):
 
 ```python
 def my_view(request):
-    response = add.delay(10, 20, author="Geeky")
+    response = add.delay(10, 20, author="Geeky") #Enqueue the task for asynchronous execution
 ```
 
 ---
